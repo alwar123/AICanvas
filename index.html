@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AICanvas - AI Image Generation</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-sparkles"></i>
+                    </div>
+                    <span class="logo-text">AICanvas</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav">
+                    <a href="#" class="nav-link">Generate</a>
+                    <a href="#" class="nav-link">Explore</a>
+                    <a href="#" class="nav-link">Community</a>
+                    <a href="#" class="nav-link">Pricing</a>
+                </nav>
+
+                <!-- User Actions -->
+                <div class="user-actions">
+                    <button class="icon-btn">
+                        <i class="fas fa-history"></i>
+                    </button>
+                    <button class="icon-btn">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <button class="sign-in-btn">Sign In</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="#" class="mobile-nav-link">Generate</a>
+                <a href="#" class="mobile-nav-link">Explore</a>
+                <a href="#" class="mobile-nav-link">Community</a>
+                <a href="#" class="mobile-nav-link">Pricing</a>
+                <div class="mobile-menu-divider"></div>
+                <button class="mobile-sign-in-btn">Sign In</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Search -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Create
+                    <span class="gradient-text">Amazing</span>
+                    <br>
+                    AI Images
+                </h1>
+                <p class="hero-description">
+                    Transform your imagination into stunning visuals with our advanced AI image generation technology.
+                </p>
+
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-bar">
+                        <div class="search-input-container">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" id="searchInput" placeholder="Describe the image you want to create..."
+                                class="search-input">
+                        </div>
+                        <button class="generate-btn" id="generateBtn">
+                            <i class="fas fa-sparkles"></i>
+                            <span class="generate-text">Generate</span>
+                        </button>
+                    </div>
+                    <div class="generation-options">
+                        <label for="imageCount">Image Count:</label>
+                        <input type="number" id="imageCount" value="1" min="1" max="4">
+
+                        <label for="aspectRatio">Aspect Ratio:</label>
+                        <select id="aspectRatio">
+                            <option value="1:1">1:1</option>
+                            <option value="4:3">4:3</option>
+                            <option value="3:2">3:2</option>
+                            <option value="16:9">16:9</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <!-- Quick Prompts -->
+                <div class="quick-prompts">
+                    <button class="prompt-btn" data-prompt="Sunset over mountains">Sunset over mountains</button>
+                    <button class="prompt-btn" data-prompt="Cyberpunk city">Cyberpunk city</button>
+                    <button class="prompt-btn" data-prompt="Magical forest">Magical forest</button>
+                    <button class="prompt-btn" data-prompt="Space exploration">Space exploration</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Options: Image Count & Aspect Ratio -->
+
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-header">
+                <h2 class="section-title">Explore Styles</h2>
+                <button class="more-filters-btn">
+                    <i class="fas fa-filter"></i>
+                    <span>More Filters</span>
+                </button>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="category-filters" id="categoryFilters">
+                <button class="category-btn active" data-category="all">
+                    <span class="category-icon">🎨</span>
+                    <span>All Styles</span>
+                </button>
+                <button class="category-btn" data-category="anime">
+                    <span class="category-icon">🎌</span>
+                    <span>Anime</span>
+                </button>
+                <button class="category-btn" data-category="nature">
+                    <span class="category-icon">🌿</span>
+                    <span>Nature</span>
+                </button>
+                <button class="category-btn" data-category="futuristic">
+                    <span class="category-icon">🚀</span>
+                    <span>Futuristic</span>
+                </button>
+                <button class="category-btn" data-category="cinema">
+                    <span class="category-icon">🎬</span>
+                    <span>Cinema</span>
+                </button>
+                <button class="category-btn" data-category="history">
+                    <span class="category-icon">🏛️</span>
+                    <span>History</span>
+                </button>
+                <button class="category-btn" data-category="abstract">
+                    <span class="category-icon">🎪</span>
+                    <span>Abstract</span>
+                </button>
+                <button class="category-btn" data-category="portrait">
+                    <span class="category-icon">👤</span>
+                    <span>Portrait</span>
+                </button>
+                <button class="category-btn" data-category="landscape">
+                    <span class="category-icon">🏔️</span>
+                    <span>Landscape</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="image-gallery" id="imageGallery">
+                <!-- Images will be populated by JavaScript -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button class="load-more-btn" id="loadMoreBtn">
+                    <i class="fas fa-plus"></i>
+                    <span>Load More Images</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-sparkles"></i>
+                        </div>
+                        <span class="logo-text">AICanvas</span>
+                    </div>
+                    <p class="footer-description">
+                        Create stunning AI-generated images with our advanced technology platform.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Features</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">AI Generation</a></li>
+                        <li><a href="#">Style Transfer</a></li>
+                        <li><a href="#">Batch Processing</a></li>
+                        <li><a href="#">High Resolution</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">API Docs</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 AICanvas. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
