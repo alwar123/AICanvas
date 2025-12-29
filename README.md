@@ -10,7 +10,7 @@ The project is built with a clean frontend and a secure backend API, making it e
 
 ---
 
-## 🏗️ Project Architecture
+## Project Architecture
 
 Frontend (HTML / CSS / JavaScript)  
 ↓  
@@ -35,4 +35,39 @@ AI Provider (Hugging Face / Replicate / Others)
 ### 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/alwar123/AICanvas.git
-cd AICanvas
+cd AICanvas 
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Environment variables
+
+Create a .env file in the project root and add your API key:
+
+HF_TOKEN=your_api_key_here
+
+
+⚠️ The .env file is ignored by Git using .gitignore
+Never commit API keys to GitHub.
+
+4️⃣ Start the server
+npm start
+
+
+The application will run at:
+
+http://localhost:3000
+
+5️⃣ Use the application
+
+Open the browser
+
+Navigate to http://localhost:3000
+
+Enter a text prompt
+
+Select image count and aspect ratio
+
+Click Generate
+
+View generated images in the galle
